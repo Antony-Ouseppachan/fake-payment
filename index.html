@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - Razorpay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 🚨 PHISHING WARNING: This is a test site for Verdict! 🚨 -->
+    <!-- DO NOT enter real card details -->
+    
+    <div class="phishing-banner">
+        ⚠️ TEST PHISHING SITE - DO NOT ENTER REAL DETAILS ⚠️
+    </div>
+
+    <div class="container">
+        <div class="payment-card">
+            <!-- Fake Razorpay Header -->
+            <div class="razorpay-header">
+                <img src="https://razorpay.com/favicon.ico" alt="Razorpay" class="brand-logo">
+                <span class="brand-name">Razorpay</span>
+                <span class="badge">🔒 Secured</span>
+            </div>
+
+            <!-- Payment Details -->
+            <div class="payment-details">
+                <div class="merchant-info">
+                    <span class="label">Payment to</span>
+                    <span class="merchant-name">Amazon India Pvt Ltd</span>
+                </div>
+                <div class="amount">
+                    <span class="label">Amount</span>
+                    <span class="amount-value">₹2,499.00</span>
+                </div>
+                <div class="order-id">
+                    <span class="label">Order ID</span>
+                    <span class="order-value">#ORD-2026-08-31-XXXX</span>
+                </div>
+            </div>
+
+            <!-- 🎯 PHISHING FORM - Card Details -->
+            <form id="payment-form" class="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <div class="card-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="card-number" 
+                            placeholder="1234 5678 9012 3456"
+                            maxlength="19"
+                            autocomplete="off"
+                            required
+                        >
+                        <span class="card-icon">💳</span>
+                    </div>
+                    <div class="card-brands">
+                        <span>Visa</span>
+                        <span>Mastercard</span>
+                        <span>RuPay</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="expiry">Expiry</label>
+                        <input 
+                            type="text" 
+                            id="expiry" 
+                            placeholder="MM/YY"
+                            maxlength="5"
+                            required
+                        >
+                    </div>
+                    <div class="form-group half">
+                        <label for="cvv">CVV</label>
+                        <input 
+                            type="password" 
+                            id="cvv" 
+                            placeholder="•••"
+                            maxlength="4"
+                            required
+                        >
+                        <span class="cvv-hint">🔒</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name on Card</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        placeholder="John Doe"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        placeholder="+91 98765 43210"
+                        required
+                    >
+                </div>
+
+                <!-- Fake Security Badges -->
+                <div class="security-section">
+                    <div class="security-badge">
+                        <span>🔒</span> PCI DSS Compliant
+                    </div>
+                    <div class="security-badge">
+                        <span>🛡️</span> 256-bit SSL Encrypted
+                    </div>
+                    <div class="security-badge">
+                        <span>⏰</span> 3D Secure Verified
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="pay-button">
+                    Pay ₹2,499.00 Securely
+                </button>
+
+                <p class="terms">
+                    By clicking "Pay", you agree to the 
+                    <a href="#">Terms & Conditions</a>
+                </p>
+            </form>
+
+            <!-- Success Modal (fake) -->
+            <div id="success-modal" class="modal" style="display:none">
+                <div class="modal-content">
+                    <div class="success-icon">✅</div>
+                    <h2>Payment Successful!</h2>
+                    <p>Your order has been placed successfully.</p>
+                    <p class="fake-email">📧 Confirmation sent to <span id="user-email"></span></p>
+                    <button onclick="closeModal()">Continue Shopping</button>
+                    <!-- 🚨 This triggers Verdict DANGER -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="razorpay-mock.js"></script>
+</body>
+</html>
